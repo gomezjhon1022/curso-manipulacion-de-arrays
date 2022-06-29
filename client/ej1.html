@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        
+const app = document.getElementById('app');
+const taskList = [
+    {task: 'Make Dinner', done: true},
+    {task: 'Go to shopping', done: true},
+    {task: 'Make my home-work', done: false},
+    {task: 'Pick up my mom', done: false},
+    {task: 'Call my dad', done: false},
+    {task: 'Call the radio station', done: true},
+]
+let isCheck;
+let counter = 0;
+taskList.forEach(element => {
+    isCheck = "";
+    if(element.done){
+        isCheck = "checked"
+        counter++
+    }
+    app.innerHTML += `Task: ${element.task}<br>Done:<input type="checkbox" ${isCheck}> <br><br>`
+});
+
+document.getElementById('counter').innerHTML = `Cantidad de task: ${taskList.length}<br>Completada: ${counter}`
+    </script>
+</body>
+</html>
